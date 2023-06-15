@@ -47,5 +47,19 @@ public class Demo{
          System.out.printf("Policy Price: $%.2f%n", newPolicy.calcualtePrice());
          System.out.println();
       }
+      
+      int smokerCounter = 0;
+      int nonSmokerCounter = 0;
+   
+      for (Policy newPolicy : policies) {
+         if (newPolicy.getPolicyholdersSmokingStat().equalsIgnoreCase("smoker")) {
+            smokerCounter++;
+         } else {
+            nonSmokerCounter++;
+         }
+      }
+        
+      System.out.println("The number of policies with a smoker is: " + smokerCounter);
+      System.out.println("The number of policies with a non-smoker is: " + nonSmokerCounter);
    }
 }
